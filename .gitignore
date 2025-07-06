@@ -139,6 +139,5 @@ kernel/configs/android-*.cfg
 # vendor device tree directories
 arch/arm64/boot/dts/vendor/
 
-# ramdisk file
-/ramdisk/ramdisk
-/ramdisk/vendor_ramdisk
+# build outputs
+/out
