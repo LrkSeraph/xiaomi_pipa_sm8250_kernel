@@ -136,8 +136,9 @@ all.config
 # fetched Android config fragments
 kernel/configs/android-*.cfg
 
-# vendor device tree directories
-arch/arm64/boot/dts/vendor/
-
 # build outputs
 /out
+drivers/staging/kperfevents/
+drivers/staging/misysinfofreader/
+include/linux/kperfevents.h
+include/linux/misysinfofreader.h
