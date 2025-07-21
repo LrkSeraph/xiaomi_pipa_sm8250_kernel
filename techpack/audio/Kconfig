@@ -1,0 +1,186 @@
+menuconfig PIPA_AUDIO_DRIVERS
+	bool "Xiaomi Pad 6 Audio Driver"
+	default y if ARCH_KONA
+	help
+	  Enable support for Audio drivers on Xiaomi Pad 6 (pipa) platform.
+	  If unsure, choose N.
+
+if PIPA_AUDIO_DRIVERS
+
+config TARGET_PRODUCT
+	string "Target product identifier"
+	default "pipa"
+	
+config PINCTRL_LPI
+	tristate "Low Power Island pin controller"
+	default m
+
+config PINCTRL_WCD
+	tristate "Wolfson Codec pin controller"
+	default m
+
+config AUDIO_EXT_CLK
+	tristate "External clock control for audio systems"
+	default m
+
+config SND_SOC_WCD9XXX_V2
+	tristate "Wolfson WCD9xxx series codecs support (v2)"
+	default m
+
+config SND_SOC_WCD_MBHC
+	tristate "Mechanical button headset control for WCD codecs"
+	default m
+
+config SND_SOC_WSA881X
+	tristate "WSA881X smart speaker amplifier support"
+	default m
+
+config WCD9XXX_CODEC_CORE_V2
+	tristate "Core components for WCD9xxx codecs (v2)"
+	default m
+
+config MSM_CDC_PINCTRL
+	tristate "QTI MSM Core Digital Control pin controller"
+	default m
+
+config MSM_QDSP6V2_CODECS
+	tristate "Audio codecs for QDSP6 v2 processors"
+	default m
+
+config MSM_ULTRASOUND
+	tristate "Ultrasound processing support"
+	default m
+
+config MSM_QDSP6_APRV2_RPMSG
+	tristate "APR v2 RPMSG communication for QDSP6"
+	default m
+
+config MSM_ADSP_LOADER
+	tristate "ADSP firmware loader"
+	default m
+
+config REGMAP_SWR
+	tristate "SoundWire register map support"
+	default m
+
+config MSM_QDSP6_SSR
+	tristate "Subsystem restart for QDSP6"
+	default m
+
+config MSM_QDSP6_PDR
+	tristate "Process domain restart for QDSP6"
+	default m
+
+config MSM_QDSP6_NOTIFIER
+	tristate "Event notifier for QDSP6 subsystems"
+	default m
+
+config SND_SOC_MSM_HOSTLESS_PCM
+	tristate "Hostless PCM support for MSM platforms"
+	default m
+
+config SND_SOC_MSM_QDSP6V2_INTF
+	tristate "QDSP6 v2 interface for audio routing"
+	default m
+
+config SOUNDWIRE
+	tristate "SoundWire bus protocol support"
+	default m
+
+config SOUNDWIRE_MSTR_CTRL
+	tristate "SoundWire master controller"
+	default m
+
+config SND_SOC_QDSP6V2
+	tristate "QDSP6 v2 audio processing support"
+	default m
+
+config SND_SOC_WCD_MBHC_ADC
+	tristate "ADC-based headset detection for WCD MBHC"
+	default m
+
+config SND_SOC_MSM_HDMI_CODEC_RX
+	tristate "HDMI audio receiver support for MSM"
+	default m
+
+config QTI_PP
+	tristate "Qualcomm Technologies audio post-processing"
+	default m
+
+config SND_HWDEP_ROUTING
+	tristate "Hardware-dependent audio routing control"
+	default m
+
+config SND_SOC_MSM_STUB
+	tristate "Stub driver for MSM audio interfaces"
+	default m
+
+config MSM_AVTIMER
+	tristate "AV timer driver for MSM platforms"
+	default m
+
+config SND_SOC_BOLERO
+	tristate "Bolero audio codec support"
+	default m
+
+config WSA_MACRO
+	tristate "WSA macro audio controller"
+	default m
+
+config VA_MACRO
+	tristate "Voice Assistant macro controller"
+	default m
+
+config RX_MACRO
+	tristate "Audio RX macro controller"
+	default m
+
+config TX_MACRO
+	tristate "Audio TX macro controller"
+	default m
+
+config SND_SOC_WCD_IRQ
+	tristate "IRQ handling for WCD audio codecs"
+	default m
+
+config SND_SOC_WCD938X
+	tristate "WCD938X audio codec support"
+	default m
+
+config SND_SOC_WCD938X_SLAVE
+	tristate "Slave mode support for WCD938X codec"
+	default m
+
+config SND_SOC_KONA
+	tristate "Kona platform audio support"
+	default m
+
+config SND_EVENT
+	tristate "Unified audio event notification framework"
+	default m
+
+config VOICE_MHI
+	tristate "Voice over MHI interface support"
+	default m
+
+config SND_SOC_CS35L41
+	tristate "Cirrus Logic CS35L41 amplifier support"
+	default m
+
+config SND_SOC_TFA9874
+	tristate "NXP TFA9874 amplifier support"
+	default m
+
+config SND_SOC_AW882XX
+	tristate "Awinic AW882XX amplifier support"
+	default m
+
+config MSM_CSPL
+	tristate "Crash-safe Programmable Loader for audio DSP"
+	default y
+
+config DIGITAL_CDC_RSC_MGR
+	tristate "Resource manager for digital codec controllers"
+	default m
+
+endif # PIPA_AUDIO_DRIVERS

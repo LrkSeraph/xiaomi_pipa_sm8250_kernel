@@ -1,0 +1,19 @@
+export TARGET_PRODUCT := $(patsubst "%",%,$(CONFIG_TARGET_PRODUCT))
+
+subdir-ccflags-y += -I$(srctree)/techpack/audio/include/uapi \
+             -I$(srctree)/techpack/audio/include
+
+ifdef CONFIG_US_PROXIMITY
+subdir-ccflags-y += -I$(srctree)/techpack/audio/include/mius
+endif
+
+ifdef CONFIG_PIPA_AUDIO_DRIVERS
+ifeq ($(TARGET_PRODUCT), pipa)
+subdir-ccflags-y += -include $(srctree)/techpack/audio/config/konaautoconf.h
+endif
+endif
+
+obj-$(CONFIG_PIPA_AUDIO_DRIVERS) += soc/
+obj-$(CONFIG_PIPA_AUDIO_DRIVERS) += dsp/
+obj-$(CONFIG_PIPA_AUDIO_DRIVERS) += ipc/
+obj-$(CONFIG_PIPA_AUDIO_DRIVERS) += asoc/

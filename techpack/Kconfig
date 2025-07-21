@@ -11,6 +11,8 @@ if TECHPACK_DRIVERS
 
 source "techpack/wlan/Kconfig"
 
+source "techpack/audio/Kconfig"
+
 endif # TECHPACK_DRIVERS
 
 endmenu
