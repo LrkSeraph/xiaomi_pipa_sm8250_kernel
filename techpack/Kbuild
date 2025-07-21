@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0-only
-TECHPACK?=y
+TECHPACK	:= $(CONFIG_TECHPACK_DRIVERS)
 
 #techpack-dirs := $(shell find $(srctree)/techpack -maxdepth 1 -mindepth 1 -type d -not -name ".*")
 techpack-dirs := $(shell find $(srctree)/techpack -maxdepth 1 -mindepth 1 -type d -not -name ".*" -not -name "camera-dxo" -not -name "camera-nonedxo" -not -name "camera-cas")

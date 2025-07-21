@@ -1,0 +1,16 @@
+menu "Techpack Drivers"
+	depends on ARCH_QCOM
+config TECHPACK_DRIVERS
+	bool "Enable Techpack Drivers"
+	default y
+	help
+	  Enable support for Xiaomi Pad 6 (pipa) platform techpack components including
+	  wireless, audio, camera and video.
+
+if TECHPACK_DRIVERS
+
+source "techpack/wlan/Kconfig"
+
+endif # TECHPACK_DRIVERS
+
+endmenu

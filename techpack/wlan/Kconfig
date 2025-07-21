@@ -1,0 +1,23 @@
+menuconfig PIPA_WLAN_DRIVERS
+	bool "Xiaomi Pad 6 WLAN Driver"
+	depends on PCI && CFG80211
+	help
+	  Enable support for WLAN drivers on Xiaomi Pad 6 (pipa) platform.
+	  
+	  This includes drivers for Qualcomm QCA6390 Wi-Fi modules.
+
+if PIPA_WLAN_DRIVERS
+
+config PIPA_QCA6390_WLAN_DRIVER
+	tristate "Qualcomm QCA6390 WLAN Driver"
+	depends on PCI && CFG80211
+	select WANT_DEV_COREDUMP
+	select CRC32
+	default m
+	help
+	  This driver supports the Qualcomm QCA6390 Wi-Fi 6 module
+	  on Xiaomi Pad 6 (pipa) platform.
+
+	  If unsure, select M to build as a loadable module.
+
+endif # PIPA_WLAN_DRIVERS
